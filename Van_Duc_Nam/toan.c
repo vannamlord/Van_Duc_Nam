@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int Cong(int a, int b) {
+int cong(int a, int b) {
 	int kq = 0;
 	kq = a + b;
 	return kq;
@@ -19,7 +19,6 @@ int nhan(int a, int b) {
 }
 
 float chia(int a, int b) {
-	int kq = 0;
-	kq = a / b;
+	float kq = a / b;
 	return kq;
 }
