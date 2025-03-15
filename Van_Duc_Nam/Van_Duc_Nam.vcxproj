@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="mang.c" />
     <ClCompile Include="toan.c" />
   </ItemGroup>
   <ItemGroup>
