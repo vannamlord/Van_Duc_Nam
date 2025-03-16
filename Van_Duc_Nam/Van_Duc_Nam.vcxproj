@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="chuoi.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="mang.c" />
     <ClCompile Include="toan.c" />

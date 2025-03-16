@@ -24,6 +24,9 @@
     <ClCompile Include="mang.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="chuoi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="toan.h">
