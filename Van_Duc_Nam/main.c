@@ -2,12 +2,12 @@
 
 void main(){
 	int tongso = 0;
-	char str[] = "heLLo";
+	char str[] = "heLLo%$";
 	while (str[tongso] !=0) {
-		if (str[tongso] < 90) {
-			printf("Ky tu la chu viet hoa tai vi tri: %d ky tu\n", tongso);
+		if (str[tongso] > 96 && str[tongso] < 123) {
+			str[tongso] -= 32;
 		}
 		tongso += 1;
 	}
-	
+	printf("Chuoi sau xu ly: %s\n", str);
 }
