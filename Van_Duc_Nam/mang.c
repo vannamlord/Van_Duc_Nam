@@ -87,3 +87,60 @@ void insonguyento(int* mang, int soluong) {
 	}
 }
 
+void thaythesoamtrongmang(int* mang, int soluong) {
+	for (int i = 0; i < soluong; i++) {
+		if (mang[i] < 0) {
+			mang[i] = 0;
+		}
+		if (i == 0) {
+			printf("Bai 4_Mang thu %d gia tri: %d\n", i, mang[i]);
+		}
+		else
+		{
+			printf("      Mang thu %d gia tri: %d\n", i, mang[i]);
+		}
+
+	}
+}
+
+void hoanvisonguyen(int* mang, int soluong) {
+	for (int i = 0; i < (soluong - 2); i += 2) {
+		if (soluong % 2 == 0) {
+			int a = mang[i];
+			mang[i] = mang[i + 1];
+			mang[i + 1] = a;
+		}
+	}
+
+	for (int i = 0; i < soluong; i++) {
+		if (i == 0) {
+			printf("Bai 8_Hoan vi so nguyen: %d\n", mang[i]);
+		}
+		else
+		{
+			printf("      Hoan vi so nguyen: %d\n", mang[i]);
+		}
+	}
+}
+
+void sapsepmangtangdan(int* mang, int soluong) {
+	for (int i = 0; i < soluong; i++) {
+		for (int x = i + 1; x < soluong; x++) {
+			if (mang[i] > mang[x]) {
+				int tam = mang[x];
+				mang[x] = mang[i];
+				mang[i] = tam;
+			}
+		}
+	}
+	for (int i = 0; i < soluong; i++) {
+		if (i == 0) {
+			printf("Bai 9_Sap sep tang dan: %d\n", mang[i]);
+		}
+		else
+		{
+			printf("      Sap sep tang dan: %d\n", mang[i]);
+		}
+	}
+}
+
