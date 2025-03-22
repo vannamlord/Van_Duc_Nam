@@ -39,6 +39,30 @@ void diachikytutrongchuoi(char* chuoi) {
 		i++;
 	}
 }
+
+void timchuoicon(char* mainstr, char* substr) {
+	int i = 0;
+	int soluongsubstr = demkytu(substr);
+	char* px = mainstr;
+	int check = 0;
+	while (mainstr[i] != 0) {
+		if (mainstr[i] == substr[0]) {
+			int x = 0;
+			while (substr[x] != 0){
+				if (substr[x] == mainstr[i + x]) {
+					check += 1;
+				}
+				x++;
+			}
+			if (check == soluongsubstr) {
+				px = &mainstr[i];
+				printf("Bai 7: Dia chi bat dau chuoi con: %p\n", px);
+				check = 0;
+			}
+		}
+		i++;
+	}
+}
 void main(){
 	char chuoi[] = "Hello World";
 	int sokytu = demkytu(chuoi);
@@ -60,5 +84,8 @@ void main(){
 
 	char chuoi_6[] = "this c ac and dac";
 	diachikytutrongchuoi(chuoi_6);
-	
+
+	char mainstr[] = "this is check this for this why";
+	char substr[] = "this";
+	timchuoicon(mainstr, substr);
 }

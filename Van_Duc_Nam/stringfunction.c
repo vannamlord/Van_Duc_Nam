@@ -59,3 +59,15 @@ void uppercase_firstchar_f(char* chuoi) {
 	}
 	printf("Bai 5: In hoa Ho va Ten: %s\n", chuoi);
 }
+
+void diachikytutrongchuoi_f(char* chuoi) {
+	int i = 0;
+	char* px = chuoi;
+	while (chuoi[i] != 0) {
+		if (chuoi[i] == 99) {
+			px = &chuoi[i];
+			printf("Bai 6: Dia chi cua ky tu c: %p\n", px);
+		}
+		i++;
+	}
+}
