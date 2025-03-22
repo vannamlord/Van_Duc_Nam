@@ -45,3 +45,17 @@ int demword(char* chuoi) {
 	}
 	return tong;
 }
+
+void uppercase_firstchar_f(char* chuoi) {
+	int i = 0;
+	while (chuoi[i] != 0) {
+		if (i == 0 && chuoi[i] > 96 && chuoi[i] < 123) {
+			chuoi[i] = chuoi[i] - 32;
+		}
+		else if ((chuoi[i] != ' ') && (chuoi[i - 1] == ' ') && (chuoi[i] > 96) && (chuoi[i] < 123)) {
+			chuoi[i] = chuoi[i] - 32;
+		}
+		i++;
+	}
+	printf("Bai 5: In hoa Ho va Ten: %s\n", chuoi);
+}

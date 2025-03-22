@@ -27,6 +27,18 @@ void uppercase_firstchar(char* chuoi) {
 	printf("Bai 5: In hoa Ho va Ten: %s\n", chuoi);
 }
 int demword(char* chuoi);
+
+void diachikytutrongchuoi(char* chuoi) {
+	int i = 0;
+	char* px = chuoi;
+	while (chuoi[i] != 0) {
+		if (chuoi[i] == 99) {
+			px = &chuoi[i];
+			printf("Bai 6: Dia chi cua ky tu c: %p\n", px);
+		}
+		i++;
+	}
+}
 void main(){
 	char chuoi[] = "Hello World";
 	int sokytu = demkytu(chuoi);
@@ -46,4 +58,7 @@ void main(){
 	char chuoi_5[] = "this is     a    string da";
 	uppercase_firstchar(chuoi_5);
 
+	char chuoi_6[] = "this c ac and dac";
+	diachikytutrongchuoi(chuoi_6);
+	
 }
