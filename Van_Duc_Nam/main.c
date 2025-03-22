@@ -12,6 +12,7 @@ void uppercase(char* chuoi) {
 	}
 	printf("Bai 3: Chuoi in hoa: %s\n", chuoi);
 }
+int demword(char* chuoi);
 void main(){
 	char chuoi[] = "Hello World";
 	int sokytu = demkytu(chuoi);
@@ -24,5 +25,8 @@ void main(){
 	char chuoi_3[] = "Hello World new world data nag";
 	uppercase(chuoi_3);
 
+	char chuoi_4[] = "this is     a    string da";
+	int tongword = demword(chuoi_4);
+	printf("Bai 4: Tong word trong chuoi: %d\n", tongword);
 
 }

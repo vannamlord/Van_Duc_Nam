@@ -19,3 +19,29 @@ int demkhoangtrang(char* chuoi) {
 	}
 	return tong;
 }
+
+void uppercase_f(char* chuoi) {
+	int i = 0;
+	while (chuoi[i] != 0) {
+		if ((chuoi[i] > 96) && (chuoi[i] < 123)) {
+			chuoi[i] = chuoi[i] - 32;
+		}
+		i++;
+	}
+	printf("Bai 3: Chuoi in hoa: %s\n", chuoi);
+}
+
+int demword(char* chuoi) {
+	int i = 0;
+	int tong = 0;
+	while (chuoi[i] != 0) {
+		if (chuoi[i] != ' ' && chuoi[i + 1] == ' ') {
+			tong += 1;
+		}
+		else if (chuoi[i] != ' ' && chuoi[i + 1] == 0) {
+			tong += 1;
+		}
+		i++;
+	}
+	return tong;
+}
