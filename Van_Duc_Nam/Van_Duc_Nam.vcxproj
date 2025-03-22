@@ -130,6 +130,7 @@
     <ClCompile Include="chuoi.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="mang.c" />
+    <ClCompile Include="stringfunction.c" />
     <ClCompile Include="toan.c" />
   </ItemGroup>
   <ItemGroup>

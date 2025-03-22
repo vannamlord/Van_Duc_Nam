@@ -1,13 +1,9 @@
 #include <stdio.h>
 
+int demkytu(char* chuoi);
+
 void main(){
-	int tongso = 0;
-	char str[] = "heLLo%$";
-	while (str[tongso] !=0) {
-		if (str[tongso] > 96 && str[tongso] < 123) {
-			str[tongso] -= 32;
-		}
-		tongso += 1;
-	}
-	printf("Chuoi sau xu ly: %s\n", str);
+	char* chuoi = "Hello World";
+	int sokytu = demkytu(chuoi);
+	printf("Bai 1: So ky tu trong chuoi: %d", sokytu);
 }
