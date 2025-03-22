@@ -12,6 +12,20 @@ void uppercase(char* chuoi) {
 	}
 	printf("Bai 3: Chuoi in hoa: %s\n", chuoi);
 }
+
+void uppercase_firstchar(char* chuoi) {
+	int i = 0;
+	while (chuoi[i] != 0) {
+		if (i == 0 && chuoi[i] > 96 && chuoi[i] < 123) {
+			chuoi[i] = chuoi[i] - 32;
+		}
+		else if ((chuoi[i] != ' ') && (chuoi[i-1] == ' ') && (chuoi[i] > 96) && (chuoi[i] < 123)) {
+			chuoi[i] = chuoi[i] - 32;
+		}
+		i++;
+	}
+	printf("Bai 5: In hoa Ho va Ten: %s\n", chuoi);
+}
 int demword(char* chuoi);
 void main(){
 	char chuoi[] = "Hello World";
@@ -28,5 +42,8 @@ void main(){
 	char chuoi_4[] = "this is     a    string da";
 	int tongword = demword(chuoi_4);
 	printf("Bai 4: Tong word trong chuoi: %d\n", tongword);
+
+	char chuoi_5[] = "this is     a    string da";
+	uppercase_firstchar(chuoi_5);
 
 }
