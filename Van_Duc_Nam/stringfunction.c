@@ -20,8 +20,9 @@ int demkhoangtrang(char* chuoi) {
 	return tong;
 }
 
-void uppercase_f(char* chuoi) {
+char* uppercase(char* chuoi) {
 	int i = 0;
+	char* px = chuoi;
 	while (chuoi[i] != 0) {
 		if ((chuoi[i] > 96) && (chuoi[i] < 123)) {
 			chuoi[i] = chuoi[i] - 32;
@@ -29,6 +30,7 @@ void uppercase_f(char* chuoi) {
 		i++;
 	}
 	printf("Bai 3: Chuoi in hoa: %s\n", chuoi);
+	return px;
 }
 
 int demword(char* chuoi) {
@@ -46,8 +48,9 @@ int demword(char* chuoi) {
 	return tong;
 }
 
-void uppercase_firstchar_f(char* chuoi) {
+char* uppercase_firstchar(char* chuoi) {
 	int i = 0;
+	char* px = chuoi;
 	while (chuoi[i] != 0) {
 		if (i == 0 && chuoi[i] > 96 && chuoi[i] < 123) {
 			chuoi[i] = chuoi[i] - 32;
@@ -57,10 +60,10 @@ void uppercase_firstchar_f(char* chuoi) {
 		}
 		i++;
 	}
-	printf("Bai 5: In hoa Ho va Ten: %s\n", chuoi);
+	return px;
 }
 
-void diachikytutrongchuoi_f(char* chuoi) {
+void diachikytutrongchuoi(char* chuoi) {
 	int i = 0;
 	char* px = chuoi;
 	while (chuoi[i] != 0) {
@@ -70,4 +73,45 @@ void diachikytutrongchuoi_f(char* chuoi) {
 		}
 		i++;
 	}
+}
+
+char* timchuoicon(char* mainstr, char* substr) {
+	int soluongsubstr = demkytu(substr);
+	int soluongmainstr = demkytu(mainstr);
+	int check = 0;
+	for (int i = 0; i < soluongmainstr; i++) {
+		for (int x = 0; x < soluongsubstr; x++) {
+			if (substr[x] == mainstr[i + x]) {
+				check += 1;
+			}
+			else {
+				break;
+			}
+		}
+		if (check == soluongsubstr) {
+			return mainstr+i;
+		}
+		check = 0;
+	}
+	return 0;
+}
+
+int trangthaiqat(char* data) {
+	//char fan_sta[16] = { 0 };
+	char tukhoa[] = "\"fan\" : \"";
+	char* px = timchuoicon(data, tukhoa) + demkytu(tukhoa);
+
+	int i = 0;
+	while (px[i] != '"') {
+		i++;
+	}
+	char* fan_sta = malloc(i + 1);
+	// memset(fan_sta, 0, 1);
+	// memcpy
+	if (timchuoicon(fan_sta, "off") == 0) {
+		free(fan_sta);
+		return 1;
+	}
+	free(fan_sta);
+	return 0;
 }
