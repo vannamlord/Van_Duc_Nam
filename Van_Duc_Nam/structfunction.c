@@ -11,3 +11,10 @@ phan_so_t nhan_x(phan_so_t A, phan_so_t B) {
 	x.mau = A.mau * B.mau;
 	return x;
 }
+
+phan_so_t chia_x(phan_so_t A, phan_so_t B) {
+	phan_so_t x;
+	x.tu = A.tu * B.mau;
+	x.mau = A.mau * B.tu;
+	return x;
+}
