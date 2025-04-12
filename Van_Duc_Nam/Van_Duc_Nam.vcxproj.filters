@@ -30,6 +30,9 @@
     <ClCompile Include="stringfunction.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="structfunction.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="toan.h">

@@ -131,6 +131,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="mang.c" />
     <ClCompile Include="stringfunction.c" />
+    <ClCompile Include="structfunction.c" />
     <ClCompile Include="toan.c" />
   </ItemGroup>
   <ItemGroup>
