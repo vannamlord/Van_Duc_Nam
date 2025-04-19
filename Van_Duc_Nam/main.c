@@ -50,24 +50,46 @@ void print_danhsach(hoc_sinh *danhsach, int n) {
 }
 void max_diemtb(hoc_sinh* danhsach, int n) {
 	float max = 0;
-	int vitrihs;
+	int vitrihs=n;
 	for (int i = 0; i < n; i++) {
 		if (danhsach[i].diemtb > max) {
 			max = danhsach[i].diemtb;
 			vitrihs = i;
 		}
 	}
-	printf("Ten hs: %s voi diemtb: %f\n",danhsach[vitrihs].ten, max);
+	if (vitrihs != n) {
+		printf("Ten hs: %s voi diemtb: %f\n", danhsach[vitrihs].ten, max);
+	}
+	else
+	{
+		printf("Khong co danh sach");
+	}
 }
+
+void sapxep_ds(hoc_sinh* danhsach, int n) {
+	for (int i = 0; i < n; i++) {
+		for (int j = i+1; j < n; j++)
+		{
+			if (danhsach[i].diemtb < danhsach[j].diemtb) {
+				hoc_sinh tam = danhsach[i];
+				danhsach[i] = danhsach[j];
+				danhsach[j] = tam;
+			}
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		printf("Danh sach ten: %s\n", danhsach[i].ten);
+	}
+}
+
 void main(){
 	int n = 0;
 	printf("Nhap so hs:");
 	scanf("%d", &n);
 	char c = getc(stdin);
 	hoc_sinh *danhsach = malloc(n * sizeof(hoc_sinh));
-	for (int x = 0; x < n; x++) {
-		danhsach[x] = nhapthongtin();
+	for (int i = 0; i < n; i++) {
+		danhsach[i] = nhapthongtin();
 	}
-	print_danhsach(danhsach, n);
-	max_diemtb(danhsach, n);
+	sapxep_ds(danhsach, n);
 }
